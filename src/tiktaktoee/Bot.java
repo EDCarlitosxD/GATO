@@ -18,6 +18,7 @@ public class Bot extends javax.swing.JFrame {
    int turno;
    int empate =0;
    Random rnd = new Random();
+   int numRND = rnd.nextInt(8) + 1;
     public Bot() {
         initComponents();
     }
@@ -188,95 +189,109 @@ public class Bot extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void turno(JTextField control) {
+      if(turno == 2){
+          turno = 1;
+      }
+        
         if (turno == 0) {
             control.setText("X");
             control.setEnabled(false);
             turno = 1;
-           
-            if (turno == 1) {
-                 int numRND = rnd.nextInt(8) + 1;
-                if (numRND == 1 ) {
+            // TURNO
+        }
+          if(turno == 1) { 
+                if (numRND == 1 && btn1.getText().isEmpty()) {
                     if (btn1.getText().length() == 0) {
                         btn1.setText("O");
                         btn1.setEnabled(false);
                         turno = 0;
                     } else{
                         numRND = rnd.nextInt(8) + 1;
+                        turno = 2;
                     }
                 }
-                else if (numRND == 2) {
+                else if (numRND == 2&& btn2.getText().isEmpty()) {
                     if (btn2.getText().length() == 0) {
                         btn2.setText("O");
                         btn2.setEnabled(false);
                         turno = 0;
                     } else{
                         numRND = rnd.nextInt(8) + 1;
+                        turno = 2;
                     }
                 }
-               else if (numRND == 3) {
+               else if (numRND == 3&& btn3.getText().isEmpty()) {
                     if (btn3.getText().length() == 0) {
                         btn3.setText("O");
                         btn3.setEnabled(false);
                         turno = 0;
                     } else{
                        numRND = rnd.nextInt(8) + 1; 
+                       turno = 2;
                     }
                 }
-               else if (numRND == 4) {
+               else if (numRND == 4&& btn4.getText().isEmpty()) {
                     if (btn4.getText().length() == 0) {
                         btn4.setText("O");
                         btn4.setEnabled(false);
                         turno = 0;
                     } else{
                         numRND = rnd.nextInt(8) + 1;
+                        turno = 2;
                     }
                 }
-               else if (numRND == 5) {
+               else if (numRND == 5&& btn5.getText().isEmpty()) {
                     if (btn5.getText().length() == 0) {
                         btn5.setText("O");
                         btn5.setEnabled(false);
                         turno = 0;
                     } else
                         numRND = rnd.nextInt(8) + 1;
+                    turno = 2;
                 }
-               else if (numRND == 6) {
+               else if (numRND == 6&& btn6.getText().isEmpty()) {
                     if (btn6.getText().length() == 0) {
                         btn6.setText("O");
                         btn6.setEnabled(false);
                         turno = 0;
                     } else
                         numRND = rnd.nextInt(8) + 1;
+                    turno = 2;
                 }
-               else if (numRND == 7) {
+               else if (numRND == 7&& btn7.getText().isEmpty()) {
                     if (btn7.getText().length() == 0) {
                         btn7.setText("O");
                         btn7.setEnabled(false);
                         turno = 0;
                     } else
                         numRND = rnd.nextInt(8) + 1;
+                    turno = 2;
                 }
-               else if (numRND == 8) {
+               else if (numRND == 8&& btn8.getText().isEmpty()) {
                     if (btn8.getText().length() == 0) {
                         btn8.setText("O");
                         btn8.setEnabled(false);
                         turno = 0;
                     } else
                         numRND = rnd.nextInt(8) + 1;
+                    turno = 2;
                 }
-              else  if (numRND == 9) {
+              else  if (numRND == 9&& btn9.getText().isEmpty()) {
                     if (btn9.getText().length() == 0) {
                         btn9.setText("O");
-                        btn8.setEnabled(false);
+                        btn9.setEnabled(false);
                         turno = 0;
                     } else{
-                        
+                       numRND = rnd.nextInt(8) + 1;
+                       turno = 2;
                     }
                         
                     
                 }
 
-            } // TURNO
-        }
+            }
+        
+        
     }
 
     public void ganador() {
